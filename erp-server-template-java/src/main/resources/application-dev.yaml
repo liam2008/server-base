@@ -1,0 +1,23 @@
+## 使用druid配置数据源
+spring:
+  application:
+    name: basic-demo-dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: Smart_888
+      url: jdbc:mysql://117.78.44.209:8635/erp_basic?characterEncoding=UTF-8
+      max-active: 20
+      validation-query: SELECT 1 FROM DUAL
+      initial-size: 10
+      max-wait: 60000
+
+## eureka server 地址， 根据实际情况设置eureka server地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://49.4.2.78:8080/eureka
+  instance:
+    prefer-ip-address: true
